@@ -14,6 +14,6 @@ export const externalURL = (externalURL: ExternalURL) => {
     case ExternalURL.discourse:
       return 'https://discourse.nouns.wtf/';
     case ExternalURL.nounsCenter:
-      return 'https://nouns.center/';
+      return 'https://docs.bluntdao.org/';
   }
 };
