@@ -94,7 +94,14 @@
       margin-bottom: 10px;
     }
   }
+}
 
+@media (max-width: 500px) {
+  .singleRow {
+    ul {
+     margin-left: 10px;
+    }
+  }
 }
 
 .rule {
