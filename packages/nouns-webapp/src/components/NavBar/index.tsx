@@ -151,6 +151,19 @@ const NavBar = () => {
                   buttonStyle={nonWalletButtonStyle}
                 />
               </Nav.Link>
+              <Nav.Link
+                href={`https://forum.bluntdao.org/`}
+                className={classes.nounsNavLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>FORUM</Trans>}
+                  buttonIcon={<FontAwesomeIcon icon={faUsers} />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
               {isDaoGteV3 && (
                 <>
                   {config.featureToggles.candidates && (
