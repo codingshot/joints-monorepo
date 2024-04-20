@@ -215,7 +215,8 @@ const NavBar = () => {
               {isDaoGteV3 ? (
                 v3DaoNavItem
               ) : (
-                <Nav.Link
+                <>
+                                <Nav.Link
                   href={`https://nouns.build/`}
                   className={classes.nounsNavLink}
                   target="_blank"
@@ -241,6 +242,8 @@ const NavBar = () => {
                   buttonStyle={nonWalletButtonStyle}
                 />
               </Nav.Link>
+                </>
+
               )}
             </div>
             <Nav.Link
