@@ -13,6 +13,7 @@ import NavBarButton, { NavBarButtonStyle } from '../NavBarButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faCodeFork, faFile, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import NavBarTreasury from '../NavBarTreasury';
@@ -160,7 +161,7 @@ const NavBar = () => {
               >
                 <NavBarButton
                   buttonText={<Trans>FORUM</Trans>}
-                  buttonIcon={<FontAwesomeIcon icon={faUsers} />}
+                  buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
                   buttonStyle={nonWalletButtonStyle}
                 />
               </Nav.Link>
@@ -227,6 +228,19 @@ const NavBar = () => {
                     buttonStyle={nonWalletButtonStyle}
                   />
                 </Nav.Link>
+                <Nav.Link
+                href={`https://forum.bluntdao.org/`}
+                className={classes.nounsNavLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>FORUM</Trans>}
+                  buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
               )}
             </div>
             <Nav.Link
