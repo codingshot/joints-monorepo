@@ -91,7 +91,7 @@ const Auction: React.FC<AuctionProps> = props => {
       return <Completionist />;
     } else {
       // Render a countdown
-      return <h1>{hours}:{minutes}:{seconds};</h1>
+      return <h1>{hours}:{minutes}:{seconds}</h1>
     }
   };
   return (
@@ -126,7 +126,7 @@ const Auction: React.FC<AuctionProps> = props => {
         <div className={classes.soon}>
           <h1>
             <Countdown
-              date={1713644840981}
+              date={1713644400000}
               renderer={renderer}
             />
           </h1>
