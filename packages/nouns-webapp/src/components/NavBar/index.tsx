@@ -234,19 +234,30 @@ const NavBar = () => {
 
               )}
             </div>
-            <Nav.Link
-              href={`https://forum.bluntdao.org/`}
-              className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
-            >
-              <NavBarButton
-                buttonText={<Trans>FORUM</Trans>}
-                buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
+            <div className={clsx(responsiveUiUtilsClasses.desktopOnly)}>
+              {isDaoGteV3 ? (
+                v3DaoNavItem
+              ) : (
+                <>
+                  <Nav.Link
+                    href={`https://forum.bluntdao.org/`}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={closeNav}
+                  >
+                    <NavBarButton
+                      buttonText={<Trans>FORUM</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
+                  </Nav.Link>
+
+                </>
+
+              )}
+            </div>
+
             <Nav.Link
               href={externalURL(ExternalURL.nounsCenter)}
               className={classes.nounsNavLink}
