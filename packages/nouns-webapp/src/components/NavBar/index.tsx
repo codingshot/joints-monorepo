@@ -52,8 +52,8 @@ const NavBar = () => {
   const nonWalletButtonStyle = !useStateBg
     ? NavBarButtonStyle.WHITE_INFO
     : isCool
-    ? NavBarButtonStyle.COOL_INFO
-    : NavBarButtonStyle.WARM_INFO;
+      ? NavBarButtonStyle.COOL_INFO
+      : NavBarButtonStyle.WARM_INFO;
 
   const closeNav = () => setIsNavExpanded(false);
   const buttonClasses = usePickByState(
@@ -103,7 +103,7 @@ const NavBar = () => {
         expand="xl"
         style={{ backgroundColor: `${useStateBg ? stateBgColor : 'white'}` }}
         className={classes.navBarCustom}
-        // expanded={isNavExpanded}
+      // expanded={isNavExpanded}
       >
         <Container style={{ maxWidth: 'unset' }}>
           <div className={classes.brandAndTreasuryWrapper}>
@@ -216,36 +216,37 @@ const NavBar = () => {
                 v3DaoNavItem
               ) : (
                 <>
-                                <Nav.Link
-                  href={`https://nouns.build/`}
-                  className={classes.nounsNavLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={closeNav}
-                >
-                  <NavBarButton
-                    buttonText={<Trans>DAO</Trans>}
-                    buttonIcon={<FontAwesomeIcon icon={faUsers} />}
-                    buttonStyle={nonWalletButtonStyle}
-                  />
-                </Nav.Link>
-                <Nav.Link
-                href={`https://forum.bluntdao.org/`}
-                className={classes.nounsNavLink}
-                target="_blank"
-                rel="noreferrer"
-                onClick={closeNav}
-              >
-                <NavBarButton
-                  buttonText={<Trans>FORUM</Trans>}
-                  buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
-                  buttonStyle={nonWalletButtonStyle}
-                />
-              </Nav.Link>
+                  <Nav.Link
+                    href={`https://nouns.build/`}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={closeNav}
+                  >
+                    <NavBarButton
+                      buttonText={<Trans>DAO</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faUsers} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
+                  </Nav.Link>
+
                 </>
 
               )}
             </div>
+            <Nav.Link
+              href={`https://forum.bluntdao.org/`}
+              className={classes.nounsNavLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeNav}
+            >
+              <NavBarButton
+                buttonText={<Trans>FORUM</Trans>}
+                buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
+                buttonStyle={nonWalletButtonStyle}
+              />
+            </Nav.Link>
             <Nav.Link
               href={externalURL(ExternalURL.nounsCenter)}
               className={classes.nounsNavLink}
