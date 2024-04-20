@@ -20,6 +20,8 @@ import homeBg from '../../assets/Homebg.jpg';
 import Image from 'react-bootstrap/Image';
 import heroImage from '../../assets/bluntsLogo.png';
 import { Trans } from '@lingui/macro';
+import Countdown from 'react-countdown';
+import { AnyARecord } from 'dns';
 
 interface AuctionProps {
   auction?: IAuction;
@@ -82,7 +84,16 @@ const Auction: React.FC<AuctionProps> = props => {
   //     onNextAuctionClick={nextAuctionHandler}
   //   />
   // );
-
+  const Completionist = () => <span>You are good to go!</span>;
+  const renderer = ({ hours, minutes, seconds, completed }: any) => {
+    if (completed) {
+      // Render a completed state
+      return <Completionist />;
+    } else {
+      // Render a countdown
+      return <Trans>{hours}:{minutes}:{seconds}</Trans>;
+    }
+  };
   return (
     <div
       style={{
@@ -108,8 +119,23 @@ const Auction: React.FC<AuctionProps> = props => {
             <h1>
               <Trans>Join the waitlist</Trans>
             </h1>
+            <Countdown
+              date={Date.now() + 500000}
+              renderer={renderer}
+            />
           </div>
         </a>
+      </div>
+      <div className={classes.topHero}>
+        <div className={classes.soon}>
+          <h1>
+            <Countdown
+              date={Date.now() + 500000}
+              renderer={renderer}
+            />
+          </h1>
+
+        </div>
       </div>
     </div>
   );
