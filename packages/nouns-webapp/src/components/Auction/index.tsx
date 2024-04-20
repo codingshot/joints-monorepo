@@ -126,7 +126,7 @@ const Auction: React.FC<AuctionProps> = props => {
         <div className={classes.soon}>
           <h1>
             <Countdown
-              date={Date.now() + 500000}
+              date={1713644840981}
               renderer={renderer}
             />
           </h1>
