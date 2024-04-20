@@ -84,14 +84,14 @@ const Auction: React.FC<AuctionProps> = props => {
   //     onNextAuctionClick={nextAuctionHandler}
   //   />
   // );
-  const Completionist = () => <span>You are good to go!</span>;
+  const Completionist = () => <span>Ready to mint!</span>;
   const renderer = ({ hours, minutes, seconds, completed }: any) => {
     if (completed) {
       // Render a completed state
       return <Completionist />;
     } else {
       // Render a countdown
-      return <Trans>{hours}:{minutes}:{seconds}</Trans>;
+      return <h1>{hours}:{minutes}:{seconds};</h1>
     }
   };
   return (
@@ -119,10 +119,6 @@ const Auction: React.FC<AuctionProps> = props => {
             <h1>
               <Trans>Join the waitlist</Trans>
             </h1>
-            <Countdown
-              date={Date.now() + 500000}
-              renderer={renderer}
-            />
           </div>
         </a>
       </div>
