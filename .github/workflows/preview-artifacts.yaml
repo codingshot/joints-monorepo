@@ -8,6 +8,7 @@ on:
       - 'img-permutator-preview/src-**'
 jobs:
   build:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

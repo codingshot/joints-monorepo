@@ -15,8 +15,14 @@ on:
 env:
   NODE_OPTIONS: --max_old_space_size=5120
 
+# Cancel superseded PR checks; keep every non-PR invocation independent.
+concurrency:
+  group: contracts.yaml-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   build_and_test:
+    timeout-minutes: 60
     name: Build and Test
     runs-on: ubuntu-latest
     steps:
